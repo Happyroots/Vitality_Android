@@ -31,6 +31,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -61,6 +62,7 @@ fun SettingsScreen(
         modifier = Modifier.fillMaxSize(),
                     topBar = {
                         TopAppBar(
+
                             title = {
                                 Text(
 
@@ -83,19 +85,29 @@ fun SettingsScreen(
                 name = R.string.sounds,
                 icon = R.drawable.bell,
                 iconDesc =  R.string.icon_description,
+
             ) {
                 // here you can do anything - navigate - open other settings, ...
             }
+
+            SettingsSwitchComp(
+                icon = R.drawable.mode_effect,
+                iconDesc = R.string.mode_effect,
+                name = R.string.mode_effect,
+                state = false,
+//                onClick = {state = !state}
+            ){}
+
 
         }
     }
 }
 
 
-@Preview
-@Composable
-fun StartOrderPreview() {
-    SettingsScreen()
+//@Preview
+//@Composable
+//fun StartOrderPreview() {
+//    SettingsScreen()
 //    CupcakeTheme {
 //        StartOrderScreen(
 //            quantityOptions = DataSource.quantityOptions,
@@ -104,7 +116,7 @@ fun StartOrderPreview() {
 //                .padding(dimensionResource(R.dimen.padding_medium))
 //        )
 //    }
-}
+//}
 
 @Composable
 fun SettingsClickableComp(
@@ -160,3 +172,47 @@ fun SettingsClickableComp(
 
 
 
+@Composable
+fun SettingsSwitchComp(
+    @DrawableRes icon: Int,
+    @StringRes iconDesc: Int,
+    @StringRes name: Int,
+    state: Boolean,
+    onClick: () -> Unit
+) {
+    Surface(
+        color = Color.Transparent,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        onClick = onClick,
+    ) {
+        Column {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        painterResource(id = icon),
+                        contentDescription = stringResource(id = iconDesc),
+                        modifier = Modifier.size(24.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = stringResource(id = name),
+                        modifier = Modifier.padding(16.dp),
+                        style = MaterialTheme.typography.bodyMedium,
+                        textAlign = TextAlign.Start,
+                    )
+                }
+                Spacer(modifier = Modifier.weight(1f))
+                Switch(
+                    checked = state,
+                    onCheckedChange = { onClick() }
+                )
+            }
+            Divider()
+        }
+    }
+}

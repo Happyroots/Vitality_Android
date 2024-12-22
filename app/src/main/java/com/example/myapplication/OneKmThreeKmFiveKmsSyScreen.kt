@@ -278,12 +278,12 @@ fun OneKmThreeKmFiveKmsSyScreen(modifier: Modifier = Modifier,
     showBackground = true,
     name = "Dark Mode"
 )
-@Composable
-fun GreetingPreview() {
-    MyApplicationTheme {
-        OneKmThreeKmFiveKmsSyScreen(onNextButtonClicked = {},)
-    }
-}
+//@Composable
+//fun GreetingPreview() {
+//   MyApplicationTheme {
+//        OneKmThreeKmFiveKmsSyScreen(onNextButtonClicked = {},)
+//    }
+//}
 
 
 @Preview

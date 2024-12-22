@@ -245,16 +245,16 @@ class TimerForegroundService : Service(){ //
             }
         }
 
-        val minutesLeft = timeLeft / 60L
-        if (minutesLeft != 4L) {
-            val secondsLeft = timeLeft - minutesLeft * 60
-            when (secondsLeft) {
-                45L -> play(characterName, "45s")
-                30L -> play(characterName, "30s")
-                15L -> play(characterName, "15s")
-                10L -> play(characterName, "10to0")
-            }
-        }
+//        val minutesLeft = timeLeft / 60L
+//        if (minutesLeft != 4L) {
+//            val secondsLeft = timeLeft - minutesLeft * 60
+//            when (secondsLeft) {
+//                45L -> play(characterName, "45s")
+//                30L -> play(characterName, "30s")
+//                15L -> play(characterName, "15s")
+//                10L -> play(characterName, "10to0")
+//            }
+//        }
     }
 
     private var mediaPlayer: MediaPlayer? = null

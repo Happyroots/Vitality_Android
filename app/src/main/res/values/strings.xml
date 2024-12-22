@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">原身</string>
+    <string name="roll">Rall</string>
+    <string name="settings">原身</string>
+    <string name="sounds">sounds</string>
+    <string name="icon_description">icon_description</string>
+    <string name="ic_arrow_forward">forward</string>
+
+    <string name="channel_name">原身</string>
+    <string name="CHANNEL_ID">vitality</string>
+    <string name="channel_description">forward</string>
+    <string name="snooze">forward</string>
+    <string name="ic_arrow_forward1">forward</string>
+
+    <string name="mode_effect">efficiency</string>
+
 </resources>
