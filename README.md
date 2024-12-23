@@ -20,7 +20,7 @@
 * mode: sound, vibration, silence(o)
 
 * add fuction 20-20-20
-
+* exit media service when app destroied
 
 * multi language(more sign not character)
 * add animation
